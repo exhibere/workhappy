@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node app.js",
-    "devstart": "nodemon app.js"
-  },
+	  "start:dev": "nodemon ./bin/www",
+	  "test": "echo \"Error: no test specified\" && exit 1"
+	},
   "dependencies": {
-    "express": "3.2.6",
+    "body-parser": "^1.18.2",
+    "express": "^3.2.6",
     "jade": "*",
+    "morgan": "^1.9.0",
     "mysql2": "^1.4.2",
     "sequelize": "^4.13.1",
     "sequelize-cli": "^3.0.0"
