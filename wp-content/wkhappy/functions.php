@@ -30,25 +30,25 @@ function wkhappy_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-	register_widget( 'wpb_widget' );
+	register_widget( 'gethappy_widget' );
 }
 add_action( 'widgets_init', 'wkhappy_widgets_init' );
 
  
 // Creating the widget 
-class wpb_widget extends WP_Widget {
+class gethappy_widget extends WP_Widget {
  
 function __construct() {
 parent::__construct(
  
 // Base ID of your widget
-'wpb_widget', 
+'gethappy_widget', 
  
 // Widget name will appear in UI
-__('WPBeginner Widget', 'wpb_widget_domain'), 
+__('Get Happiness Widget', 'gethappy_widget_domain'), 
  
 // Widget description
-array( 'description' => __( 'Sample widget based on WPBeginner Tutorial', 'wpb_widget_domain' ), ) 
+array( 'description' => __( 'Happiness Widget', 'gethappy_widget_domain' ), ) 
 );
 }
  
@@ -63,7 +63,7 @@ if ( ! empty( $title ) )
 echo $args['before_title'] . $title . $args['after_title'];
  
 // This is where you run the code and display the output
-echo __( 'Hello, World!', 'wpb_widget_domain' );
+echo __( get_template_part( 'template-parts/widget/gethappy', 'div' ), 'gethappy_widget_domain' );
 echo $args['after_widget'];
 }
          
@@ -73,7 +73,7 @@ if ( isset( $instance[ 'title' ] ) ) {
 $title = $instance[ 'title' ];
 }
 else {
-$title = __( 'New title', 'wpb_widget_domain' );
+$title = __( 'New title', 'gethappy_widget_domain' );
 }
 // Widget admin form
 ?>
