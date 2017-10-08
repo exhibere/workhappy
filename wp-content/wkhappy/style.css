@@ -1,11 +1,13 @@
-<?php
-//* Code goes here
-
-add_action( 'wp_enqueue_scripts', 'enqueue_parent_styles' );
-
-function enqueue_parent_styles() {
-   wp_enqueue_style( 'parent-style', get_template_directory_uri().'/style.css' );
-}
+/*
+Theme Name: Work Happy Theme
+Author: Exhibere 
+Template: twentyseventeen
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+Text Domain: wkhappy 
+*/
 /**
  * Register widget area.
  *
@@ -21,15 +23,6 @@ function wkhappy_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-	register_sidebar( array(
-		'name'          => __( 'Header Center', 'wkhappy' ),
-		'id'            => 'headercenter-1',
-		'description'   => __( 'Add widgets here to appear in the center of the page.', 'wkhappy' ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	
+
 }
 add_action( 'widgets_init', 'wkhappy_widgets_init' );
