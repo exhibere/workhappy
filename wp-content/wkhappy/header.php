@@ -18,6 +18,7 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
 <?php wp_head(); ?>
 </head>
@@ -29,7 +30,7 @@
 	<header id="masthead" class="site-header" role="banner">
 
 		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
-		<?php if ( is_active_sidebar( 'headercenter-1' ) ) {
+		<?php if ( is_active_sidebar( 'headercenter-1' ) && twentyseventeen_is_frontpage()  ) {
 	  		 dynamic_sidebar( 'headercenter-1' ); } ?>
 	
 
